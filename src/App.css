@@ -1,0 +1,233 @@
+body {
+  height: 100vh;
+  background: radial-gradient(#eee, #aaa);
+}
+
+.container {
+  text-align: center;
+  font-family: bpg_glaho;
+  background-color: bisque;
+  width: 50%;
+  margin: 10% auto 0 auto;
+  padding: 50px;
+  border-radius: 40px;
+}
+.header {
+  margin-bottom: 5%;
+}
+
+img {
+  width: 50px;
+  margin-top: 0px;
+}
+.form > input {
+  box-sizing: border-box;
+  width: 70%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.form > button {
+  box-sizing: border-box;
+  font-size: 18px;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.navButton {
+  padding: 10px;
+  font-size: 18px;
+  cursor: default;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+
+  font-weight: lighter;
+}
+.create-new {
+  border-top: 1px solid #777;
+  width: 100%;
+}
+
+input {
+  box-sizing: border-box;
+  width: 75%;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+}
+
+.to-do-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+.actions {
+  margin-right: 10px;
+}
+
+.taskName {
+  width: 50%;
+  text-align: left;
+  font-size: 1.2em;
+}
+.taskName:hover {
+  color: rgb(49, 47, 47);
+}
+
+.editForm {
+  width: 400px;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 2%;
+}
+.taskSwitch {
+  width: 10%;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: box-shadow 0.3s;
+  background: radial-gradient(#eee, #aaa);
+  cursor: pointer;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input:checked {
+  box-shadow: inset 0 0 0 20px rgb(81, 81, 245);
+}
+
+button {
+  position: relative;
+  z-index: 0;
+  border-radius: 4px;
+  padding: 7px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: lighter;
+}
+
+button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button:active {
+  color: rgb(24, 22, 22);
+}
+
+button:active:after {
+  background: transparent;
+}
+
+button:hover:before {
+  opacity: 1;
+}
+
+button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.753);
+  left: 0;
+  top: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+
+nav.a {
+  color: wheat;
+}
+
+.button {
+  color: #eee;
+  text-decoration: none;
+}
+
+
+body, * {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  height: 100vh;
+  background: #eee;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-menu-container {
+  position: relative;
+}
+
+.popup-menu {
+  position: absolute;
+  z-index: 2;
+  transform: scale(0);
+  transform-origin: top left;
+  
+  width: 10rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  
+  transition: transform 0.2s;
+  
+  &.shown {
+    transform: scale(1);
+  }
+}
